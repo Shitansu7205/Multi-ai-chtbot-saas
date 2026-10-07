@@ -5,5 +5,7 @@ services:
     buildCommand: python -m pip install --upgrade pip && python -m pip install -r requirements.txt
     startCommand: uvicorn chatbot.app:app --host 0.0.0.0 --port $PORT
     envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.10
       - key: GROQ_API_KEY
         sync: false
