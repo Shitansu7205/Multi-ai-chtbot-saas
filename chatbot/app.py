@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -31,7 +33,8 @@ app = FastAPI()
 # STEP 3: LOAD PDF
 # ==========================================
 
-loader = PyPDFLoader("data/CAREER_counsellor.pdf")
+pdf_path = Path(__file__).resolve().parent.parent / "data" / "CAREER_counsellor.pdf"
+loader = PyPDFLoader(str(pdf_path))
 
 raw_documents = loader.load()
 
@@ -158,7 +161,6 @@ def chat(request: ChatRequest):
         "question": request.question,
         "answer": answer
     }
-
 
 
 
