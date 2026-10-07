@@ -9,4 +9,5 @@ langchain-chroma
 langchain-groq
 python-dotenv
 pypdf
+python = 3.12.10
 sentence-transformers
