@@ -2,7 +2,7 @@ services:
   - type: web
     name: career-counsellor-api
     runtime: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: python -m pip install --upgrade pip && python -m pip install -r requirements.txt
     startCommand: uvicorn chatbot.app:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: GROQ_API_KEY
